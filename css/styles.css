@@ -1,0 +1,1083 @@
+body {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	color: #04080f;
+}
+
+a {
+	color: #4dd1bf;
+}
+
+a:hover, a:active, a:focus {
+	color: #1A9E8C;
+}
+
+.error {
+	color: #e74c3c;
+	display: block;
+	/* Look. It is 11:22pm and I am ready to sleep. This works. */
+	width: calc(100% - 2em);
+}
+
+input {
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
+input[type="submit"], button {
+	color: #fffdfd;
+	margin: 1.5em 0;
+	padding: .75em;
+	font-size: 1.2em;
+	border: none;
+	outline: none;
+	background-color: #4dd1bf;
+	transition: background-color 0.25s;
+}
+
+input[type="submit"]:hover, button:hover {
+	background-color: #1A9E8C;
+	cursor: pointer;
+}
+
+input[type="number"] {
+	max-width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1.2em;
+	border-bottom: 2px solid #1A9E8C;
+	transition: border-bottom 0.25s;
+}
+
+input[type="number"]:focus {
+	border-bottom: 2px solid #4dd1bf;
+}
+
+/* To apply no user select to whatever elements need it */
+.spoiler, .tutorial-demo {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+/* Obligatory spinner hider from: http://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box. Because I think number spinners are annoying and need to have an option to abolish them*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/* BEGIN NAVBAR STYLES */
+#header {
+	width: 100%;
+	background-color: #3e81d8;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	height: 3.750em;
+	z-index: 9999;
+	height: 3.750em;
+	position: fixed;
+	top: 0;
+}
+
+#logo {
+	height: 50px;
+	width: 50px;
+	margin: 5px;
+	float: left;
+}
+
+#logo img {
+	max-width: 100%
+}
+
+#menu {
+	width: 100%;
+	position: absolute;
+	top: 3.750em;
+	overflow: hidden;
+	margin-top: 0.625em;
+	margin-bottom: 1.340em;
+	transition: max-height 0.35s ease-in;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	float: right;
+	background-color: #3e81d8;
+	max-height: 0;
+}
+
+.menu-item > a {
+	width: 100%;
+	display: block;
+	background-color: #3e81d8;
+	text-decoration: none;
+	color: #FFF;
+	padding: 1em 0;
+	text-align: center;
+}
+
+.menu-item > a:active, .menu-item > a:hover, .menu-item > a:focus, .menu-item:active, .menu-item:hover, .menu-item:focus {
+	outline: none;
+	background-color: #2568BF;
+}
+
+/*Styling the hamburger menu*/
+#hamburger{
+	display: inline-block;
+}
+
+#hamburger {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	float: right;
+	padding: 15px;
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+
+#bar-cont {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+}
+
+/*Spans are placed in a 30px space, making each division of the hamburger 5px*/
+
+#hamburger span {
+	height: 4px;
+	width: 30px;
+	background-color: #FFF;
+	display: block;
+	position: absolute;
+	border-radius: 8px;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	left: 0px;
+}
+
+/* Hamburger Animation */
+#hamburger span:nth-child(1) {
+	top: 4px;
+}
+
+#hamburger span:nth-child(2), #hamburger span:nth-child(3) {
+	top: 13px
+}
+
+#hamburger span:nth-child(4) {
+	top: 22px;
+}
+
+#hamburger.open span:nth-child(1), #hamburger.open span:nth-child(4)  {
+	width: 0%;
+	opacity: 0.1;
+	left: 50%;
+	top: 50%;
+}
+
+#hamburger.open span:nth-child(2) {
+	transform: rotate(45deg);
+}
+
+#hamburger.open span:nth-child(3) {
+	transform: rotate(-45deg);
+}
+
+/* END NAVBAR STYLES */
+
+/* BEGIN MAIN DOCUMENT BODY STYLES */
+
+#main-wrapper {
+	max-width: 100%;
+	margin-top: 3.750em;
+}
+
+#content {
+	margin: 0 1em;
+	padding: 0.5em 0;
+	padding-bottom: 3em;
+}
+
+h1, #ohms-law, h2, h3 {
+	font-family: "Julius Sans One", sans-serif;
+	font-weight: 700;
+}
+
+.block-link {
+	display: block;
+	padding: 0.5em 1em;
+	margin: 0 auto;
+	width: 5em;
+	text-align: center;
+	font-size: 1.5em;
+	text-decoration: none;
+	color: #fffdfd;
+	background-color: #4dd1bf;
+	transition: background-color 0.25s
+}
+
+.block-link:hover, .block-link:active, .block-link:focus {
+	background-color: #1A9E8C;
+	color: #fffdfd;
+}
+
+/* END MAIN DOCUMENT BODY STYLES */
+
+/* BEGIN SLIDER STYLES */
+#slider {
+	max-width: 100%;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+
+.arrow {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 60px;
+	opacity: 0.5;
+	color: #FFF;
+	font-weight: lighter;
+	background-repeat: no-repeat; 
+	background-position: center;
+}
+
+.arrow:hover, .arrow:focus, .arrow:active {
+	opacity: 1;
+	background-color: 
+}
+
+#left {
+	left: 0;
+}
+
+#right {
+	right: 0;
+}
+
+.no-svg #left {
+	background-image: url("../img/slider/ui/left_arrow.png");
+}
+
+.svg #left {
+	background-image: url("../img/slider/ui/left_arrow.svg");
+}
+
+.no-svg #right {
+	background-image: url("../img/slider/ui/right_arrow.png");
+}
+
+.svg #right {
+	background-image: url("../img/slider/ui/right_arrow.svg");
+}
+
+#dots {
+	position: absolute;
+	bottom: 0px;
+}
+
+.dot {
+	height: 0.75em;
+	width: 0.75em;
+	border-radius: 50%;
+	background-color: #FFF;
+	opacity: 0.5;
+	display: inline-block;
+	margin: 0.3em;
+	transition: opacity 1s;
+}
+
+.dot.active {
+	opacity: 1;
+}
+
+.dot:hover {
+	cursor: pointer;
+}
+
+#slides {
+	max-width: 100%;
+	display: block;
+}
+
+.slide {
+	max-width: 100%;
+	position: absolute;
+	margin: 0 auto;
+	top: 0;
+	opacity: 0;
+	-webkit-animation: fade-out-transition 0.5s both;
+	animation: fade-out-transition 0.5s both;
+	transition: opacity 0.5s linear 1s;
+}
+
+#slides .slide:nth-child(1){
+	position: relative;
+}
+
+.slide > img {
+	max-width: 100%;
+	display: block;
+}
+
+.slide.current {
+	display: block;
+	opacity: 1;
+	-webkit-animation: fade-transition 0.5s both;
+	animation: fade-transition 0.5s both;
+}
+
+@-webkit-keyframes fade-transition{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+@keyframes fade-transition{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fade-out-transition{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+	}
+}
+
+@keyframes fade-out-transition{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+	}
+}
+
+/* END SLIDER STYLES */
+
+/* STYLING FOR 404 PAGE */
+.fourofourerror {
+	text-align: center;
+}
+
+.fourofourerror > img {
+	max-width: 100%;
+}
+
+/* END 404 STYLING */
+
+/* STYLING FOR TOOLS PAGE */
+#ohms-law {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#ohms_law_calc {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#select-val {
+	height: 2.986em;
+	margin: 1.5em 0;
+}
+
+#select-val * {
+	color: #fffdfd;
+	display: inline-block;
+	font-family: "Julius Sans One", sans-serif;
+	font-weight: 700;
+	font-size: 1.2em;
+	width: 33.333%;
+	margin: 0px;
+	line-height: 1em;
+	padding: 0.75em 0;
+	float: left;
+	border: none;
+	outline: none;
+	background-color: #1A9E8C;
+	transition: background-color 0.25s;
+}
+
+#select-val *.active {
+	background-color: #4dd1bf;
+}
+
+#select-val *:hover {
+	background-color: #34B8A6;
+}
+
+#vir_form * {
+	display: inline-block;
+}
+
+#vir_form > div {
+	width: 40%;
+	padding: 0;
+	margin: 0;
+}
+
+#vir_form > span {
+	width: 15%;
+}
+
+
+#vir_form > input:hover, #vir_form > input:focus, #vir_form > input:active {
+	background-color: #1A9E8C;
+}
+
+.ohms_num {
+	max-width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1.2em;
+	border-bottom: 2px solid #4dd1bf;
+}
+
+#sign {
+	font-weight: 700;
+	font-size: 1.5em;
+	color: #4dd1bf;
+}
+
+#result {
+	margin: 1em 0;
+	font-size: 1.1em;
+}
+/* END STYLING FOR TOOLS PAGE */
+
+/* STYLING FOR TUTORIAL SELECTION SCREEN */
+.tutorial-outline h2 {
+	font-size: 1.1em;
+}
+
+.tutorial-section {
+	width: 100%;
+	height: 8em;
+	padding: 1em 0;
+	position: relative;
+	background-color: #d6e5ee;
+	margin: 1em 0;
+	transition: background-color 0.25s, color 0.25s;
+}
+
+.tutorial-section a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.tutorial-section:hover, .tutorial-section:active, .tutorial-section:focus {
+	color: #fffdfd;
+	background-color: #4dd1bf;
+} 
+
+.tutorial-section:visited {
+	color: #04080f;
+}
+
+.tutorial-image {
+	height: 6em;
+	width: 6em;
+	margin: 1em 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+.tutorial-image > img {
+	max-height: 100%;
+}
+
+.tutorial-outline-box {
+	height: 8em;
+	width: calc(100% - 6em);
+}
+
+.tutorial-outline {
+	padding: 0 1em;
+}
+
+.tutorial-outline h2 {
+	margin: 0 0;
+}
+
+.tutorial-image, .tutorial-outline-box {
+	display: inline-block;
+	vertical-align: top;
+	float: left;
+}
+
+/* END STYLING FOR TUTORIAL SELECTION SCREEN */
+
+/* STYLING FOR PARTS LIST */
+#parts-list {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	list-style-type: none;
+}
+
+#parts-list > li {
+	margin: 1.5em auto;
+}
+
+.part-image {
+	text-align: center;
+	max-width: 20em;
+	margin: 0 auto;
+}
+
+.part-image img {
+	max-width: 100%;
+}
+
+.divider {
+	display: none;
+}
+
+/* END STYLING FOR PARTS LIST */
+
+.tutorial-demo {
+	margin: 1em 0;
+	text-align: center;
+}
+
+.tutorial-demo img {
+	width: 100%;
+}
+
+/* END STYLES FOR TUTORIAL SEGMENTS */
+
+/* STYLES FOR BUTTON TO SCROLL TO THE TOP */
+#toTop {
+	height: 3em;
+	width: 3em;
+	border-radius: 50%;
+	background-color: #3e81d8;
+	position: fixed; 
+	bottom: -1em;
+	right: 1em;
+	transition: transform .5s, background-color .5s;
+	transform: translateY(2em);
+	-moz-transform: translateY(2em);
+	-o-transform: translateY(2em);
+	-webkit-transform: translateY(2em);
+	background-repeat: no-repeat; 
+	background-position: center;
+	background-size: 3em 3em;
+}
+
+#toTop.visible {
+	transform: translateY(-2em);
+	-moz-transform: translateY(-2em);
+	-o-transform: translateY(-2em);
+	-webkit-transform: translateY(-2em);
+}
+
+.no-svg #toTop {
+	background-image: url("../img/toTop/arrow.png");
+}
+
+.svg #toTop {
+	background-image: url("../img/toTop/arrow.svg");
+}
+
+#toTop:hover {
+	background-color: #2568BF;
+	cursor: pointer; 
+}
+/* END SCROLL BUTTON STYLES */
+
+/* STYLES FOR CODE VIEWERS */
+div.code {
+	position: relative;
+	text-align: left;
+	left: 1em;
+	font-size: 1.1em;
+	max-width: calc(100% - 1em);
+	word-wrap: break-word;
+}
+
+.code {
+	font-family: "Courier New", courier, monospace;
+}
+
+.code > div {
+	max-width: calc(100% - 1em);
+	word-wrap: break-word;
+}
+
+.indent {
+	margin-left: 1em;
+}
+
+.decl {
+	color: #4dd1bf;
+}
+
+.func {
+	color: #d35400;
+}
+
+.string {
+	color: #3e81d8;
+}
+
+.decl_func {
+	color: #1e8248;
+}
+
+.comment {
+	color: #95a5a6;
+}
+/* END STYLES FOR CODE VIEWERS */
+
+/* STYLES FOR LED DEMO */
+#led-demo #button-casing {
+	width: 70px;
+	height: 70px;
+	border-radius: 10px;
+	position: relative;
+	background-color: #bdc3c7;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 1em;
+}
+
+#led-demo #button-casing > button {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: none;
+	position: absolute;
+	top: calc(50% - 25px);
+	left: calc(50% - 25px);
+	background-color: #e74c3c;
+	margin: 0;
+}
+
+.LED {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: inline-block;
+	background-color: #1e8248;
+	vertical-align: middle;
+	margin: 1em;
+}
+
+#led-demo #button-casing > button:hover {
+	background-color: #e04c3c;
+}
+
+#led-demo #button-casing > button:active, #button-casing > button:focus {
+	outline: none;
+}
+
+#led-demo #button-casing > button:active {
+	background-color: #c0392b;
+}
+
+.on {
+	background-color: #2ecc71 !important;
+}
+
+.pressed {
+	background-color: #c0392b !important;
+}
+/* END STYLES FOR LED DEMO */
+
+/* STYLES FOR DELAY DEMO */
+#delay-demo div, #delay-demo form {
+	display: inline-block;
+	margin: 1em;
+}
+
+#delay-input div {
+	margin: 0;
+}
+
+#delay-demo input{
+	width: 6em;
+}
+/* END DELAY STYLES */
+
+/* STYLES FOR SPOILERS */
+.spoiler {
+	max-width: 100%;
+	background-color: #d6e5ee;
+	padding: 1em;
+	user-select: none;
+	transition: background-color .25s, color .25s;
+	scrollT
+}
+
+.spoiler:hover {
+	background-color: #5ed1c1;
+	color: #fffdfd;
+	cursor: pointer;
+}
+
+.spoiler:before {
+	font-family: FontAwesome;
+	content: "\f054";
+	display: inline-block;
+	transition: transform .25s;
+	margin-right: 1em;
+}
+
+.spoiler.shown:before {
+	transform: rotate(90deg);
+}
+
+.spoiler-content {
+	max-width: 100%;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+}
+
+.spoiler-content.shown {
+	padding: 1em;
+	height: auto;
+	box-sizing: border-box;
+}
+/* END STYLES FOR SPOILERS */
+
+#multiply-demo {
+	font-size: 1.2em;
+	font-family: "Courier New", courier, monospace;
+}
+
+#multiply-demo input[type="number"] {
+	width: 2em;
+	font-family: "Courier New", courier, monospace;
+}
+
+#multiply-demo input[type="submit"] {
+	padding: .5em;
+}
+
+#output #title {
+	font-weight: 700;
+}
+
+/* STYLES FOR FOR DEMONSTRATION */
+#for-demo-form {
+	max-width: 30em;
+	margin: 0 auto;
+	text-align: left;
+	font-family: "Courier New", courier, monospace;
+	font-size: 1.1em;
+}
+
+#for-demo-form input {
+	width: 3.5em;
+	font-family: "Courier New", courier, monospace;
+}
+
+#for-demo-form button {
+	padding: .25em;
+	font-family: "Courier New", courier, monospace;
+}
+
+.demo-submit {
+	text-align: center;
+	margin: 0;
+}
+
+.demoSpinStration {
+	-webkit-animation-name: spin;
+    -webkit-animation-duration: 1.9s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 1.9s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 1.9s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+
+.spincat {
+	width: 60% !important;
+	-webkit-animation-name: spin;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 2s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+@-moz-keyframes spin {
+	from {
+		-moz-transform: rotate(0deg);
+	}
+	to {
+		-moz-transform: rotate(359deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}
+/* END STYLES FOR DEMONSTRATION */
+
+/* STYLES FOR KNIGHTRIDER STRIP */
+#knightrider-animation div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.play:after {
+	font-family: FontAwesome;
+	content: "\f04c";
+}
+
+.pause:after {
+	font-family: FontAwesome;
+	content: "\f04b";
+}
+
+#knightrider-animation #play-pause {
+	width: 1.2em;
+	text-align: center;
+}
+
+#knightrider-animation #play-pause:after {
+	color: #04080f;
+	font-size: 1.5em;
+}
+
+#knightrider-animation #play-pause:hover:after {
+	color: #1d1d1d;
+	cursor: pointer;
+}
+/* END KNIGHTRIDER STYLES */
+
+/* STYLES FOR INPUT PAGE*/
+.operators table {
+	text-align: left;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+.operators td {
+	width: auto;
+	padding: 1em;
+	min-width: 2.625em;
+}
+
+.operators th {
+	text-align: center;
+}
+
+.operators tr:nth-child(even) {
+	background-color: #d6e5ee;
+}
+
+/* MEDIA QUERIES */
+
+/* Weird breakpoint for interactive demo stuff  */
+@media screen and (max-width: 45.000em){
+	#knightrider-strip .LED {
+		width: 25px;
+		height: 25px;
+		margin: 0.25em;
+	}
+	#for-demo-form input[type="number"]{
+		width: 1em;
+	}
+	#for-demo-form {
+		max-width: 20em;
+	}
+}
+
+/* Tablet media query. Most of the styles for tablet also apply to desktop */
+@media screen and (min-width: 40.000em){
+	#gif {
+		max-width: 40em;
+	}
+	#ohms_law_calc {
+		max-width: 35em;
+	}
+	#hamburger {
+		display: none;
+	}
+
+	#header {
+		position: static;
+	}
+
+	#main-wrapper {
+		margin-top: 0;
+	}
+
+	#menu {
+		width: auto;
+		float: right;
+		position: static;
+		max-height: none;
+		height: 3.750em;
+	}
+	.menu-item {
+		display: inline-block;
+	}
+	.menu-item > a {
+		width: auto;
+		padding: 1em 1em;
+		font-size: 1.25em;
+		line-height: 1em;
+		display: inline-block;
+	}
+	.up {
+		max-height: auto;
+	}
+
+	/* STYLES FOR TUTORIAL SELECTORS */
+	#tutorial-select {
+		text-align: center;
+	}
+
+	.tutorial-section {
+		width: 14em;
+		height: 18em;
+		padding: 1em 0;
+		margin: 1em 1em;
+		display: inline-block;
+	}
+
+	.tutorial-image {
+		height: 8em;
+		width: 14em;
+	}
+
+	.tutorial-outline-box {
+		height: 6em;
+		width: 14em;
+		margin-top: 1em;
+	}
+
+	.tutorial-outline {
+		padding: 0 1em;
+	}
+
+	.tutorial-outline h2 {
+		margin: 0 0;
+	}
+
+	.tutorial-image, .tutorial-outline-box {
+		display: inline-block;
+		vertical-align: top;
+		float: left;
+	}
+
+	/* STYLES FOR PARTS */
+	#parts-list {
+		text-align: center;
+	}
+
+	#parts-list > li {
+		text-align: left;
+		width: 40%;
+		height: 25em;
+		padding: 0 1em;
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+/* The final desktop styles */
+@media screen and (min-width: 62em){
+	#content {
+		width: 60em;
+		margin: 0 auto;
+	}
+	#tutorial-select {
+		max-width: 80em;
+		margin: 0 auto;
+	}
+	.menu-item > a {
+		padding: 1em 2em;
+	}
+	.menu-item > a:active, .menu-item > a:hover, .menu-item > a:focus, .menu-item:active, .menu-item:hover, .menu-item:focus {
+		outline: none;
+		background-color: #3e81d8;
+		color: #d6e5ee;
+	}
+}
+
+/* Desktop styles */
+
+
+ /*More desktop. When the image starts to break in the slider */
+@media screen and (min-width: 70em){
+	#slider {
+		height: 30em;
+	}
+}
+
+ /*Above 1920px (The actual image width on the slider) */
+@media screen and (min-width: 120.001em){
+	#slider {
+		height: auto;
+		background-color: #04080f;
+	}
+	.slide {
+		width: 100%;
+	}
+	.slide > img {
+		margin: 0 auto;
+	}
+}
+
+/* Finally, styles for the final thanks image */
+#thanks {
+	margin: 0 auto;
+	max-width: 20em;
+}
